@@ -3,8 +3,3 @@ source/LeaveApp/build/
 *.keystore
 *.jks
 *.apk.idsig
-
-# 原始素材可能包含隐私，禁止上传
-素材2/
-shots*/
-预览/*.psd
