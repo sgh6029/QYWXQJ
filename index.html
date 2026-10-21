@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>完蛋企业 LV.999.1 · 开源学习项目</title>
+<style>
+  :root {
+    --bg: #0b0d10;
+    --card: #15181d;
+    --text: #e9edf2;
+    --muted: #9aa4b2;
+    --blue: #66ccff;
+    --red: #ff5a5f;
+    --amber: #ffb020;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 36px 20px 60px; }
+  .warning {
+    border: 1px solid rgba(255, 90, 95, .55);
+    background: rgba(255, 90, 95, .10);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+    font-size: 14px;
+  }
+  .warning b { color: var(--red); }
+  .warning p { margin: 6px 0; }
+  header h1 { font-size: 40px; margin: 0 0 6px; letter-spacing: 1px; }
+  header .sub { color: var(--muted); font-size: 15px; }
+  .badge {
+    display: inline-block; margin-top: 12px; padding: 4px 12px;
+    border: 1px solid rgba(102, 204, 255, .5); color: var(--blue);
+    border-radius: 999px; font-size: 13px;
+  }
+  .download {
+    display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 8px;
+  }
+  .btn {
+    display: inline-block; padding: 12px 22px; border-radius: 12px;
+    text-decoration: none; font-weight: 600;
+  }
+  .btn.primary { background: linear-gradient(135deg, #66ccff, #2a8fe0); color: #04121c; }
+  .btn.ghost { border: 1px solid #2a3038; color: var(--text); background: #12151a; }
+  .meta { color: var(--muted); font-size: 13px; margin: 6px 0 0; }
+  h2 { font-size: 22px; margin: 40px 0 6px; }
+  p, li { color: #cdd5df; font-size: 15px; }
+  ul { padding-left: 22px; }
+  .grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px; margin-top: 18px;
+  }
+  .grid figure { margin: 0; background: var(--card); border-radius: 12px; overflow: hidden; }
+  .grid img { width: 100%; display: block; }
+  .grid figcaption { padding: 8px 10px; color: var(--muted); font-size: 12px; text-align: center; }
+  .notice {
+    background: rgba(255, 176, 32, .10);
+    border: 1px solid rgba(255, 176, 32, .45);
+    border-radius: 14px; padding: 16px 20px; margin-top: 18px;
+    font-size: 14px;
+  }
+  .notice b { color: var(--amber); }
+  footer {
+    margin-top: 46px; padding-top: 22px; border-top: 1px solid #222831;
+    color: #7f8a99; font-size: 12px;
+  }
+  a { color: var(--blue); }
+  code { background: #1b2027; padding: 2px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="warning">
+    <b>警告：仅供交流学习，禁止用于真实请假、考勤、审批或任何商业/违法用途。</b>
+    <p>本应用不是企业微信、荆州学院或任何学校的官方客户端；与腾讯、企业微信、荆州学院无关联。</p>
+    <p>使用、修改或分发本应用及代码造成的任何直接或间接后果，均由使用者自行承担，<b>与作者无关</b>。</p>
+    <p>完整条款请阅读 <a href="警告与免责声明.md">《警告与免责声明》</a>。</p>
+  </div>
+
+  <header>
+    <h1>完蛋企业</h1>
+    <div class="sub">离线 Android 界面还原演示 · 自定义绘制 · 无网络、无第三方 SDK</div>
+    <div class="badge">LV.999.1 · versionCode 1022</div>
+  </header>
+
+  <div class="download">
+    <a class="btn primary" href="app/完蛋企业-LV.999.1.apk" download>下载 APK</a>
+    <a class="btn ghost" href="README-使用说明.md">使用说明</a>
+    <a class="btn ghost" href="LICENSE">MIT License</a>
+    <a class="btn ghost" href="README.md">项目说明</a>
+  </div>
+  <p class="meta">Android 6.0+ · 包名 com.huzhou.leaveapp · APK SHA-256: F4FF6044E5134FE023AD23F41C1205D076795874B861CD851B59115B5F0A90EB</p>
+
+  <h2>主要功能</h2>
+  <ul>
+    <li>消息 / 文档 / 通讯录 / 工作台 / 我 五个一级入口全部可点击。</li>
+    <li>工作台进入请假前有 3 秒加载：1 秒黑屏 + 蓝色进度条，2 秒白屏「学生请假」，随后进入列表。</li>
+    <li>通讯录水印按「我 → 设置」里的姓名、学号和当前日期时间实时生成。</li>
+    <li>我的设置：性别、姓名、学号、班级、手机号、请假理由/学年/学期/性质/辅导员。</li>
+    <li>请假列表：1 条已通过未销假 + 6 条已销假，每条可点开；已销假无底部按钮。</li>
+    <li>自定义时间只在请假详情右上角，只修改当前记录。</li>
+  </ul>
+
+  <h2>界面预览</h2>
+  <div class="grid">
+    <figure><img src="screenshots/01_消息页.png" alt="消息页"><figcaption>消息</figcaption></figure>
+    <figure><img src="screenshots/02_我的.png" alt="我的"><figcaption>我</figcaption></figure>
+    <figure><img src="screenshots/06_请假列表.png" alt="请假列表"><figcaption>请假列表</figcaption></figure>
+    <figure><img src="screenshots/07_已销假详情.png" alt="已销假详情"><figcaption>已销假详情</figcaption></figure>
+    <figure><img src="screenshots/08_文档.png" alt="文档"><figcaption>文档</figcaption></figure>
+    <figure><img src="screenshots/09_通讯录.png" alt="通讯录水印"><figcaption>通讯录水印</figcaption></figure>
+    <figure><img src="screenshots/10_我的设置.png" alt="我的设置"><figcaption>我的设置</figcaption></figure>
+    <figure><img src="screenshots/11_加载黑屏.png" alt="加载黑屏"><figcaption>加载 · 黑屏</figcaption></figure>
+    <figure><img src="screenshots/12_加载白屏.png" alt="加载白屏"><figcaption>加载 · 白屏</figcaption></figure>
+  </div>
+
+  <h2>源码与构建</h2>
+  <p>完整源码在 <code>source/LeaveApp/</code>，Manifest、Java 源码、资源、构建脚本均已包含。构建需要 JDK、Android SDK、build-tools 36.0.0。</p>
+  <pre style="background:#12151a;border:1px solid #222831;border-radius:12px;padding:14px;overflow:auto;"><code>cd source/LeaveApp
+powershell -ExecutionPolicy Bypass -File .\build.ps1</code></pre>
+  <p>公开仓库不包含原始发布签名；重新构建会自动生成新签名，无法直接覆盖官方 APK 升级。</p>
+
+  <h2>开源许可与素材</h2>
+  <p>作者编写的源代码采用 <b>MIT License</b>，可自由使用、修改、分发。企业微信、荆州学院等截图、名称、图标、校徽版权归原权利人，<b>不在 MIT 许可范围内</b>，仅用于学习交流，禁止商用或冒充官方。</p>
+  <p>详见 <a href="第三方素材说明.md">《第三方素材说明》</a>。</p>
+
+  <div class="notice">
+    <b>隐私说明：</b>安装包内不包含真实姓名、学号、手机号、头像或水印；示例资料可在「我 → 设置」中自行修改。本应用不申请权限、不联网、不读取相册。
+  </div>
+
+  <footer>
+    完蛋企业 LV.999.1 · 仅供交流学习 · 使用本应用或代码造成的任何后果与作者无关。<br>
+    下载后请在 24 小时内删除；如权利人认为内容侵权，请联系删除。
+  </footer>
+</div>
+</body>
+</html>
